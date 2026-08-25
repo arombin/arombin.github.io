@@ -201,13 +201,33 @@
       color: #05E66E;
     }
 
-    .hero-korean-name {
-      margin-top: -12px;
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+
+      margin-top: -10px;
       margin-bottom: 30px;
-      color: #4b5563;
-      font-size: 20px;
+
+      color: #6b7280;
+      font-size: 15px;
       font-weight: 600;
-      letter-spacing: 0.08em;
+    }
+
+    .hero-links a {
+      color: #4b5563;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .hero-links a:hover {
+      color: #07984F;
+    }
+
+    .hero-links .separator {
+      color: #c4c9d0;
+      font-weight: 400;
     }
 
     .hero-description {
@@ -992,6 +1012,17 @@
           Hyebin<br>
           Park<span>.</span>
         </h1>
+
+        <div class="hero-links">
+          <a href="https://danieldoh.github.io/assets/pdf/HJ_CV.pdf"
+             target="_blank" rel="noopener noreferrer">CV</a>
+          <span class="separator">/</span>
+          <a href="https://www.linkedin.com/in/hyungjun-doh99/"
+             target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <span class="separator">/</span>
+          <a href="https://scholar.google.com/citations?user=NAp6u_cAAAAJ&amp;hl=en"
+             target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        </div>
 
         <div class="hero-buttons">
 
