@@ -2,39 +2,1121 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>나를 소개합니다</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Your Name | Researcher</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    .container {
-      max-width: 600px;
-      margin: 80px auto;
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
+
+      color: #1f2937;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       Navigation
+    ========================== */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+
+      border-bottom: 1px solid #eeeeee;
+
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1050px;
+      height: 70px;
+
+      margin: auto;
+      padding: 0 30px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+
+      font-size: 14px;
+      font-weight: 500;
+
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+
+    /* =========================
+       Hero
+    ========================== */
+
+    .hero {
+      min-height: 90vh;
+
+      display: flex;
+      align-items: center;
+
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          #eaf2ff 0%,
+          transparent 40%
+        ),
+        linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #f8fafc 100%
+        );
+
+      padding-top: 70px;
+    }
+
+    .hero-container {
+      max-width: 1050px;
+      width: 100%;
+
+      margin: auto;
+      padding: 80px 30px;
+    }
+
+    .hero-label {
+      color: #2563eb;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(46px, 8vw, 80px);
+      line-height: 1.1;
+
+      color: #111827;
+
+      letter-spacing: -0.04em;
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #2563eb;
+    }
+
+    .hero-description {
+      max-width: 680px;
+
+      color: #6b7280;
+
+      font-size: 19px;
+
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+
+      padding: 12px 21px;
+
+      border-radius: 8px;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      text-decoration: none;
+
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
       background: white;
-      padding: 40px;
+      color: #374151;
+
+      border: 1px solid #d1d5db;
+    }
+
+    .btn-secondary:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+
+
+    /* =========================
+       Common Section
+    ========================== */
+
+    section {
+      padding: 100px 30px;
+    }
+
+    .section-container {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .section-title {
+      margin-bottom: 50px;
+    }
+
+    .section-label {
+      color: #2563eb;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+      color: #111827;
+
+      font-size: 36px;
+      letter-spacing: -0.03em;
+    }
+
+
+    /* =========================
+       About
+    ========================== */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 1.3fr 1fr;
+
+      gap: 70px;
+
+      align-items: start;
+    }
+
+    .about-text {
+      color: #4b5563;
+      font-size: 16px;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+    }
+
+    .info-box {
+      background: #f8fafc;
+
+      padding: 30px;
+
+      border-radius: 14px;
+      border: 1px solid #eef0f4;
+    }
+
+    .info-item {
+      margin-bottom: 20px;
+    }
+
+    .info-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-item strong {
+      display: block;
+
+      color: #111827;
+
+      font-size: 13px;
+
+      margin-bottom: 4px;
+    }
+
+    .info-item span {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+
+    /* =========================
+       Research
+    ========================== */
+
+    #research {
+      background: #f8fafc;
+    }
+
+    .research-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .research-card {
+      background: white;
+
+      padding: 30px;
+
+      border: 1px solid #e5e7eb;
       border-radius: 12px;
-      box-shadow: 0 10px rgba(0,0,0,0.1);
+
+      transition: 0.25s;
+    }
+
+    .research-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 15px 30px
+        rgba(0, 0, 0, 0.06);
+    }
+
+    .research-number {
+      color: #2563eb;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      margin-bottom: 18px;
+    }
+
+    .research-card h3 {
+      font-size: 19px;
+
+      color: #111827;
+
+      margin-bottom: 12px;
+    }
+
+    .research-card p {
+      color: #6b7280;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       Publications
+    ========================== */
+
+    .publication {
+      display: grid;
+
+      grid-template-columns: 75px 1fr;
+
+      padding: 28px 0;
+
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .publication-year {
+      font-size: 14px;
+      font-weight: 700;
+
+      color: #2563eb;
+    }
+
+    .publication-title {
+      color: #111827;
+
+      font-size: 17px;
+      font-weight: 600;
+
+      margin-bottom: 6px;
+    }
+
+    .publication-authors {
+      color: #6b7280;
+
+      font-size: 14px;
+
+      margin-bottom: 3px;
+    }
+
+    .publication-journal {
+      color: #9ca3af;
+
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    .publication-links {
+      margin-top: 10px;
+    }
+
+    .publication-links a {
+      color: #2563eb;
+
+      font-size: 13px;
+      font-weight: 600;
+
+      text-decoration: none;
+
+      margin-right: 14px;
+    }
+
+
+    /* =========================
+       Projects
+    ========================== */
+
+    #projects {
+      background: #f8fafc;
+    }
+
+    .project-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 25px;
+    }
+
+    .project-card {
+      min-height: 230px;
+
+      background: #ffffff;
+
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+
+      padding: 35px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      transition: 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #bcd2ff;
+    }
+
+    .project-tag {
+      color: #2563eb;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.08em;
+
+      margin-bottom: 15px;
+    }
+
+    .project-card h3 {
+      color: #111827;
+
+      font-size: 21px;
+
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: #6b7280;
+
+      font-size: 14px;
+    }
+
+    .project-link {
+      color: #2563eb;
+
+      text-decoration: none;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      margin-top: 20px;
+    }
+
+
+    /* =========================
+       Contact
+    ========================== */
+
+    .contact-box {
+      background: #111827;
+
+      color: white;
+
+      border-radius: 20px;
+
+      padding: 60px;
+
       text-align: center;
     }
-    h1 {
-      margin-bottom: 10px;
+
+    .contact-box h2 {
+      font-size: 34px;
+
+      margin-bottom: 15px;
     }
-    p {
-      line-height: 1.6;
+
+    .contact-box p {
+      color: #9ca3af;
+
+      margin-bottom: 30px;
     }
+
+    .contact-box a {
+      color: white;
+
+      text-decoration: none;
+    }
+
+    .email {
+      display: inline-block;
+
+      background: white;
+      color: #111827 !important;
+
+      border-radius: 8px;
+
+      padding: 12px 22px;
+
+      font-weight: 600;
+    }
+
+
+    /* =========================
+       Footer
+    ========================== */
+
+    footer {
+      padding: 40px 30px;
+
+      text-align: center;
+
+      color: #9ca3af;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       Mobile
+    ========================== */
+
+    @media (max-width: 768px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-container {
+        padding-top: 110px;
+        padding-bottom: 90px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+
+      .hero-description {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 75px 22px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .contact-box {
+        padding: 45px 25px;
+      }
+    }
+
   </style>
 </head>
+
+
 <body>
-  <div class="container">
-    <h1>안녕하세요 👋</h1>
-    <p>저는 jbs371입니다.</p>
-    <p>이곳은 저를 소개하는 개인 홈페이지입니다.</p>
-    <p>관심사: 개발, 공부, 기록</p>
-    <p>이메일: example@email.com</p>
-  </div>
+
+
+  <!-- =======================
+       Navigation
+  ======================== -->
+
+  <nav>
+    <div class="nav-container">
+
+      <a class="logo" href="#">
+        Your Name
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+
+  <!-- =======================
+       Hero
+  ======================== -->
+
+  <header class="hero">
+
+    <div class="hero-container">
+
+      <div class="hero-label">
+        Researcher · AI · Remote Sensing
+      </div>
+
+      <h1>
+        Your Name<span>.</span>
+      </h1>
+
+      <p class="hero-description">
+        I am a researcher interested in
+        artificial intelligence, computer vision,
+        and remote sensing.
+        My research focuses on developing
+        intelligent methods for understanding
+        and enhancing Earth observation imagery.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#research"
+           class="btn btn-primary">
+          View My Research
+        </a>
+
+        <a href="#publications"
+           class="btn btn-secondary">
+          Publications
+        </a>
+
+        <a href="#contact"
+           class="btn btn-secondary">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =======================
+       About
+  ======================== -->
+
+  <section id="about">
+
+    <div class="section-container">
+
+      <div class="section-title">
+
+        <div class="section-label">
+          About
+        </div>
+
+        <h2>
+          About Me
+        </h2>
+
+      </div>
+
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <p>
+            안녕하세요. 저는 인공지능과
+            원격탐사 분야를 연구하고 있는
+            연구자입니다.
+          </p>
+
+          <p>
+            위성 및 항공영상과 같은
+            Earth Observation 데이터를
+            인공지능 기술과 결합하여
+            지구환경과 공간정보를 보다
+            정밀하게 이해하는 방법에
+            관심이 있습니다.
+          </p>
+
+          <p>
+            특히 Computer Vision,
+            Image Restoration,
+            Remote Sensing AI 등의
+            연구를 수행하고 있습니다.
+          </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+          <div class="info-item">
+            <strong>POSITION</strong>
+            <span>Researcher / Ph.D. Student</span>
+          </div>
+
+          <div class="info-item">
+            <strong>FIELD</strong>
+            <span>
+              Artificial Intelligence,
+              Remote Sensing
+            </span>
+          </div>
+
+          <div class="info-item">
+            <strong>INTERESTS</strong>
+            <span>
+              Computer Vision,
+              Earth Observation,
+              Image Restoration
+            </span>
+          </div>
+
+          <div class="info-item">
+            <strong>LOCATION</strong>
+            <span>Seoul, Republic of Korea</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================
+       Research
+  ======================== -->
+
+  <section id="research">
+
+    <div class="section-container">
+
+      <div class="section-title">
+
+        <div class="section-label">
+          Research
+        </div>
+
+        <h2>
+          Research Interests
+        </h2>
+
+      </div>
+
+
+      <div class="research-grid">
+
+        <div class="research-card">
+
+          <div class="research-number">
+            01
+          </div>
+
+          <h3>
+            Remote Sensing AI
+          </h3>
+
+          <p>
+            Deep learning approaches for
+            understanding satellite and
+            aerial imagery.
+          </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+          <div class="research-number">
+            02
+          </div>
+
+          <h3>
+            Image Restoration
+          </h3>
+
+          <p>
+            Image super-resolution,
+            enhancement and reconstruction
+            for Earth observation imagery.
+          </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+          <div class="research-number">
+            03
+          </div>
+
+          <h3>
+            GeoAI
+          </h3>
+
+          <p>
+            Artificial intelligence for
+            geospatial analysis and
+            large-scale Earth observation.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================
+       Publications
+  ======================== -->
+
+  <section id="publications">
+
+    <div class="section-container">
+
+      <div class="section-title">
+
+        <div class="section-label">
+          Publications
+        </div>
+
+        <h2>
+          Selected Publications
+        </h2>
+
+      </div>
+
+
+      <div class="publication">
+
+        <div class="publication-year">
+          2026
+        </div>
+
+        <div>
+
+          <div class="publication-title">
+            Your Research Paper Title
+          </div>
+
+          <div class="publication-authors">
+            <strong>Your Name</strong>,
+            Author Two,
+            Author Three
+          </div>
+
+          <div class="publication-journal">
+            Journal / Conference Name
+          </div>
+
+          <div class="publication-links">
+            <a href="#">Paper</a>
+            <a href="#">Code</a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="publication">
+
+        <div class="publication-year">
+          2025
+        </div>
+
+        <div>
+
+          <div class="publication-title">
+            Another Research Paper
+          </div>
+
+          <div class="publication-authors">
+            Author One,
+            <strong>Your Name</strong>,
+            Author Three
+          </div>
+
+          <div class="publication-journal">
+            Journal / Conference Name
+          </div>
+
+          <div class="publication-links">
+            <a href="#">Paper</a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="publication">
+
+        <div class="publication-year">
+          2024
+        </div>
+
+        <div>
+
+          <div class="publication-title">
+            Previous Research Work
+          </div>
+
+          <div class="publication-authors">
+            <strong>Your Name</strong>,
+            Co-author
+          </div>
+
+          <div class="publication-journal">
+            Journal Name
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================
+       Projects
+  ======================== -->
+
+  <section id="projects">
+
+    <div class="section-container">
+
+      <div class="section-title">
+
+        <div class="section-label">
+          Projects
+        </div>
+
+        <h2>
+          Research Projects
+        </h2>
+
+      </div>
+
+
+      <div class="project-grid">
+
+        <div class="project-card">
+
+          <div>
+
+            <div class="project-tag">
+              Computer Vision
+            </div>
+
+            <h3>
+              Satellite Image
+              Super-Resolution
+            </h3>
+
+            <p>
+              Enhancing spatial resolution
+              of satellite imagery through
+              deep learning and
+              domain-aware reconstruction.
+            </p>
+
+          </div>
+
+          <a href="#"
+             class="project-link">
+            View Project →
+          </a>
+
+        </div>
+
+
+        <div class="project-card">
+
+          <div>
+
+            <div class="project-tag">
+              Earth Observation
+            </div>
+
+            <h3>
+              GeoAI Research
+            </h3>
+
+            <p>
+              Developing intelligent
+              geospatial models for
+              extracting meaningful
+              information from
+              Earth observation data.
+            </p>
+
+          </div>
+
+          <a href="#"
+             class="project-link">
+            View Project →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================
+       Contact
+  ======================== -->
+
+  <section id="contact">
+
+    <div class="section-container">
+
+      <div class="contact-box">
+
+        <h2>
+          Let's Connect.
+        </h2>
+
+        <p>
+          Research collaboration,
+          academic inquiries,
+          or just say hello.
+        </p>
+
+        <a
+          class="email"
+          href="mailto:your@email.com">
+          your@email.com
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================
+       Footer
+  ======================== -->
+
+  <footer>
+
+    © 2026 Your Name.
+    All rights reserved.
+
+  </footer>
+
+
 </body>
 </html>
-출처: https://recording-it.tistory.com/127 [나를 위한 꾸준한 기록 - 다시개발:티스토리]
