@@ -266,65 +266,40 @@
 
 
     /* ===================================
-       Hero Information Card
+       Hero Profile Image
     ==================================== */
 
-    .hero-card {
-      padding: 32px;
+    .hero-profile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-      background: rgba(255, 255, 255, 0.78);
+    .profile-image-wrap {
+      width: min(340px, 100%);
+      aspect-ratio: 4 / 5;
 
-      border: 1px solid rgba(209, 213, 219, 0.7);
-      border-radius: 18px;
+      overflow: hidden;
 
-      backdrop-filter: blur(10px);
+      border-radius: 24px;
+
+      background: #eef2f7;
+
+      border: 1px solid rgba(209, 213, 219, 0.75);
 
       box-shadow:
-        0 20px 50px
-        rgba(15, 23, 42, 0.06);
+        0 24px 55px
+        rgba(15, 23, 42, 0.10);
     }
 
-    .hero-card-title {
-      margin-bottom: 22px;
+    .profile-image {
+      width: 100%;
+      height: 100%;
 
-      color: #111827;
+      display: block;
 
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .hero-info {
-      padding: 15px 0;
-
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .hero-info:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .hero-info:first-of-type {
-      padding-top: 0;
-    }
-
-    .hero-info-label {
-      margin-bottom: 3px;
-
-      color: #9ca3af;
-
-      font-size: 11px;
-      font-weight: 700;
-
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .hero-info-value {
-      color: #374151;
-
-      font-size: 14px;
-      font-weight: 500;
+      object-fit: cover;
+      object-position: center;
     }
 
 
@@ -883,8 +858,12 @@
         font-size: 54px;
       }
 
-      .hero-card {
-        max-width: 500px;
+      .hero-profile {
+        justify-content: flex-start;
+      }
+
+      .profile-image-wrap {
+        width: min(320px, 85vw);
       }
 
       section {
@@ -965,11 +944,11 @@
 
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#education">Experience</a></li>
         <li><a href="#awards">Awards</a></li>
+        <li><a href="#research">Research</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
@@ -996,14 +975,6 @@
           Hyebin<br>
           Park<span>.</span>
         </h1>
-
-        <p class="hero-description">
-          I am an <strong>AI and remote sensing researcher</strong>
-          focusing on super-resolution and environmental variable
-          downscaling using satellite and meteorological data.
-          My research aims to recover and estimate fine-scale
-          information from imperfect Earth observation data.
-        </p>
 
         <div class="hero-buttons">
 
@@ -1036,62 +1007,14 @@
       </div>
 
 
-      <div class="hero-card">
+      <div class="hero-profile">
 
-        <div class="hero-card-title">
-          Current Position
-        </div>
-
-        <div class="hero-info">
-
-          <div class="hero-info-label">
-            Position
-          </div>
-
-          <div class="hero-info-value">
-            Ph.D. Student & Graduate Research Assistant
-          </div>
-
-        </div>
-
-
-        <div class="hero-info">
-
-          <div class="hero-info-label">
-            Affiliation
-          </div>
-
-          <div class="hero-info-value">
-            Seoul National University of Science and Technology
-          </div>
-
-        </div>
-
-
-        <div class="hero-info">
-
-          <div class="hero-info-label">
-            Department
-          </div>
-
-          <div class="hero-info-value">
-            Applied Artificial Intelligence
-          </div>
-
-        </div>
-
-
-        <div class="hero-info">
-
-          <div class="hero-info-label">
-            Research
-          </div>
-
-          <div class="hero-info-value">
-            Remote Sensing AI · Super-Resolution ·
-            Environmental Downscaling
-          </div>
-
+        <div class="profile-image-wrap">
+          <img
+            src="profile.jpg"
+            alt="Hyebin Park"
+            class="profile-image"
+          >
         </div>
 
       </div>
@@ -1189,102 +1112,6 @@
           </div>
 
         </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ===================================
-       Research Interests
-  ==================================== -->
-
-  <section id="research">
-
-    <div class="section-container">
-
-      <div class="section-title">
-
-        <div class="section-label">
-          Research
-        </div>
-
-        <h2>
-          Research Interests
-        </h2>
-
-      </div>
-
-
-      <div class="research-grid">
-
-
-        <div class="research-card">
-
-          <div class="research-number">
-            01
-          </div>
-
-          <h3>
-            Satellite Image
-            Super-Resolution
-          </h3>
-
-          <p>
-            Developing deep learning methods to enhance
-            the spatial resolution of satellite imagery,
-            with particular interest in realistic degradation,
-            cross-sensor domain gaps, and high-resolution
-            Earth observation.
-          </p>
-
-        </div>
-
-
-        <div class="research-card">
-
-          <div class="research-number">
-            02
-          </div>
-
-          <h3>
-            Environmental
-            Downscaling
-          </h3>
-
-          <p>
-            Recovering fine-scale environmental information
-            from coarse observations, including air temperature,
-            gross primary productivity (GPP), and other
-            meteorological and environmental variables.
-          </p>
-
-        </div>
-
-
-        <div class="research-card">
-
-          <div class="research-number">
-            03
-          </div>
-
-          <h3>
-            Foundation Models
-            for Earth Observation
-          </h3>
-
-          <p>
-            Studying satellite imagery foundation models,
-            multi-source Earth observation data,
-            and criteria for evaluating and constructing
-            high-quality training datasets.
-          </p>
-
-        </div>
-
 
       </div>
 
@@ -1903,6 +1730,105 @@
 
   </section>
 
+
+
+
+
+
+
+  <!-- ===================================
+       Research Interests
+  ==================================== -->
+
+  <section id="research">
+
+    <div class="section-container">
+
+      <div class="section-title">
+
+        <div class="section-label">
+          Research
+        </div>
+
+        <h2>
+          Research Interests
+        </h2>
+
+      </div>
+
+
+      <div class="research-grid">
+
+
+        <div class="research-card">
+
+          <div class="research-number">
+            01
+          </div>
+
+          <h3>
+            Satellite Image
+            Super-Resolution
+          </h3>
+
+          <p>
+            Developing deep learning methods to enhance
+            the spatial resolution of satellite imagery,
+            with particular interest in realistic degradation,
+            cross-sensor domain gaps, and high-resolution
+            Earth observation.
+          </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+          <div class="research-number">
+            02
+          </div>
+
+          <h3>
+            Environmental
+            Downscaling
+          </h3>
+
+          <p>
+            Recovering fine-scale environmental information
+            from coarse observations, including air temperature,
+            gross primary productivity (GPP), and other
+            meteorological and environmental variables.
+          </p>
+
+        </div>
+
+
+        <div class="research-card">
+
+          <div class="research-number">
+            03
+          </div>
+
+          <h3>
+            Foundation Models
+            for Earth Observation
+          </h3>
+
+          <p>
+            Studying satellite imagery foundation models,
+            multi-source Earth observation data,
+            and criteria for evaluating and constructing
+            high-quality training datasets.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
 
 
   <!-- ===================================
