@@ -383,20 +383,24 @@
       border-radius: 16px;
     }
 
+    /* Keep academic figures slightly inset instead of filling the whole card. */
     .figure-card img {
-      width: 100%;
+      width: calc(100% - 64px);
+      max-width: 960px;
       height: auto;
       display: block;
+      margin: 32px auto 28px;
       object-fit: contain;
       background: #fff;
     }
 
     .figure-caption {
-      padding: 17px 20px;
+      padding: 17px 24px 19px;
       color: var(--muted);
       font-size: 13px;
       line-height: 1.65;
       border-top: 1px solid var(--line);
+      background: #fbfdfc;
     }
 
     .figure-caption strong { color: var(--ink); }
@@ -546,6 +550,11 @@
       .hero-scale-card { min-height: 290px; }
       .scale-value { font-size: 46px; }
       .scale-value.small { font-size: 58px; }
+
+      .figure-card img {
+        width: calc(100% - 28px);
+        margin: 18px auto 16px;
+      }
     }
   </style>
 </head>
