@@ -557,6 +557,132 @@
         margin: 18px auto 16px;
       }
     }
+  
+    /* ===================================
+       Password-protected research content
+    ==================================== */
+
+    .protected-gate {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .lock-panel {
+      padding: 36px;
+      background:
+        linear-gradient(180deg, #ffffff 0%, var(--green-pale) 100%);
+      border: 1px solid var(--green-line);
+      border-radius: 18px;
+    }
+
+    .lock-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      background: var(--green-soft);
+      font-size: 21px;
+    }
+
+    .lock-panel h2 {
+      margin: 8px 0 10px;
+      color: var(--ink);
+      font-size: 26px;
+      letter-spacing: -.025em;
+    }
+
+    .lock-panel > p {
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .lock-form {
+      display: flex;
+      gap: 10px;
+    }
+
+    .lock-form input {
+      min-width: 0;
+      flex: 1;
+      height: 46px;
+      padding: 0 14px;
+      border: 1px solid #ced7d1;
+      border-radius: 9px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      outline: none;
+    }
+
+    .lock-form input:focus {
+      border-color: var(--green-dark);
+      box-shadow: 0 0 0 3px rgba(5,230,110,.12);
+    }
+
+    .lock-form button {
+      height: 46px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 9px;
+      background: var(--green);
+      color: #07351F;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 760;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .lock-form button:hover {
+      background: var(--green-hover);
+      color: #fff;
+    }
+
+    .lock-status {
+      min-height: 22px;
+      margin-top: 10px;
+      color: #b42318;
+      font-size: 13px;
+    }
+
+    .protected-content {
+      display: none;
+    }
+
+    .protected-content.visible {
+      display: block;
+      animation: revealProtected .3s ease;
+    }
+
+    @keyframes revealProtected {
+      from {
+        opacity: 0;
+        transform: translateY(7px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .lock-panel {
+        padding: 26px;
+      }
+
+      .lock-form {
+        flex-direction: column;
+      }
+
+      .lock-form button {
+        width: 100%;
+      }
+    }
+
   </style>
 </head>
 
@@ -621,330 +747,133 @@
     </div>
   </header>
 
+  
   <main class="research-main">
     <div class="research-wrap">
 
-      <section class="detail-section">
-        <div class="detail-section-head">
-          <div class="detail-index">01 · Overview</div>
-          <div class="detail-heading">
-            <h2>Bridging global weather prediction and local-scale temperature</h2>
-            <p>
-              Global machine-learning weather models provide accurate and
-              computationally efficient forecasts, but their coarse spatial
-              resolution limits the representation of terrain-driven temperature
-              gradients, urban heat islands, and other localized surface effects.
-              SR-Weather addresses this scale gap through learned super-resolution.
-            </p>
-          </div>
-        </div>
+      <section class="protected-gate" id="protectedGate">
+        <div class="lock-panel">
+          <div class="lock-icon">🔒</div>
 
-        <div class="metric-grid">
-          <div class="metric-card">
-            <div class="metric-label">Input resolution</div>
-            <div class="metric-value">0.25°</div>
-            <div class="metric-note">Approximately 25-km global weather fields</div>
-          </div>
+          <div class="detail-index">Protected Research</div>
+          <h2>Research details are password protected.</h2>
 
-          <div class="metric-card">
-            <div class="metric-label">Output resolution</div>
-            <div class="metric-value">1 km</div>
-            <div class="metric-note">High-resolution surface air temperature</div>
-          </div>
+          <p>
+            Enter the access password to view the methodology,
+            results, figures, and publication details.
+          </p>
 
-          <div class="metric-card">
-            <div class="metric-label">ERA5 test RMSE</div>
-            <div class="metric-value">1.16 K</div>
-            <div class="metric-note">Compared with 1.79 K for bicubic interpolation</div>
-          </div>
+          <form class="lock-form" id="lockForm">
+            <input
+              type="password"
+              id="passwordInput"
+              placeholder="Enter password"
+              autocomplete="current-password"
+              required
+            >
+            <button type="submit">Unlock Research</button>
+          </form>
 
-          <div class="metric-card">
-            <div class="metric-label">ERA5 test R²</div>
-            <div class="metric-value">0.85</div>
-            <div class="metric-note">Compared with 0.65 for bicubic interpolation</div>
-          </div>
+          <div class="lock-status" id="lockStatus" aria-live="polite"></div>
         </div>
       </section>
 
-      <section class="detail-section">
-        <div class="detail-section-head">
-          <div class="detail-index">02 · Contribution</div>
-
-          <div class="detail-heading">
-            <h2>Research contribution</h2>
-            <p>
-              The novelty of SR-Weather lies not only in increasing spatial
-              resolution, but in connecting machine-learning weather prediction
-              with local-scale environmental information and demonstrating that
-              super-resolution can also improve forecast accuracy.
-            </p>
-          </div>
-        </div>
-
-        <div class="contribution-grid">
-
-          <article class="contribution-card">
-            <span class="contribution-no">01</span>
-            <h3>Forecast-oriented Super-Resolution</h3>
-            <p>
-              Rather than treating downscaling only as a reanalysis reconstruction
-              problem, SR-Weather is designed for direct application to
-              machine-learning weather forecasts. A model trained with ERA5 is
-              transferred to FuXi medium-range forecasts without retraining.
-            </p>
-            <span class="contribution-keyword">Forecast Transfer</span>
-          </article>
-
-          <article class="contribution-card">
-            <span class="contribution-no">02</span>
-            <h3>Spatially Conditioned Downscaling</h3>
-            <p>
-              Fine-scale terrain, impervious-surface, and seasonal climatological
-              information explicitly condition the reconstruction so that local
-              temperature variability is recovered beyond what is available in
-              the coarse meteorological grid alone.
-            </p>
-            <span class="contribution-keyword">Physical Context</span>
-          </article>
-
-          <article class="contribution-card">
-            <span class="contribution-no">03</span>
-            <h3>Resolution Enhancement + Bias Correction</h3>
-            <p>
-              The framework improves spatial detail while also reducing forecast
-              error. This shows that learned super-resolution can operate as more
-              than interpolation: it can refine the statistical quality of
-              machine-learning weather predictions.
-            </p>
-            <span class="contribution-keyword">Forecast Refinement</span>
-          </article>
-
-        </div>
-      </section>
-
-      <section class="detail-section">
-        <div class="detail-section-head">
-          <div class="detail-index">03 · Framework</div>
-          <div class="detail-heading">
-            <h2>Two-stage SR-Weather framework</h2>
-            <p>
-              The model is first trained using ERA5 2-m air temperature as the
-              coarse input and MODIS-derived 1-km air temperature as the target.
-              The trained model is then applied directly to FuXi forecasts to
-              generate kilometer-scale temperature forecasts.
-            </p>
-          </div>
-        </div>
-
-        <div class="framework-grid">
-          <div class="framework-card" data-step="01">
-            <h3>High-resolution target construction</h3>
-            <p>
-              Daily 1-km air temperature is derived from MODIS land-surface
-              temperature using station observations and environmental predictors.
-            </p>
-          </div>
-
-          <div class="framework-card" data-step="02">
-            <h3>Super-resolution training</h3>
-            <p>
-              SR-Weather learns the mapping from 0.25° ERA5 temperature to
-              MODIS-derived 1-km air temperature while integrating fine-scale
-              spatial predictors.
-            </p>
-          </div>
-
-          <div class="framework-card" data-step="03">
-            <h3>FuXi forecast downscaling</h3>
-            <p>
-              The ERA5-trained model receives FuXi 0.25° forecasts and produces
-              1-km temperature fields for lead times from one to seven days.
-            </p>
-          </div>
-        </div>
-
-        <div class="input-row">
-          <span class="input-pill">ERA5 T2M</span>
-          <span class="input-pill">FuXi T2M</span>
-          <span class="input-pill">MODIS-derived Air Temperature</span>
-          <span class="input-pill">DEM</span>
-          <span class="input-pill">Impervious Surface Fraction</span>
-          <span class="input-pill">Seasonal Climatology Map</span>
-        </div>
-
-        <div class="figure-card">
-          <img
-            src="image/weather_sr/Framework.png"
-            alt="SR-Weather two-stage super-resolution framework"
-            loading="lazy">
-          <div class="figure-caption">
-            <strong>Framework.</strong>
-            Training uses ERA5 and MODIS-derived 1-km air temperature; the
-            trained network is then applied to FuXi forecasts with the same
-            high-resolution auxiliary predictors.
-          </div>
-        </div>
-      </section>
-
-      <section class="detail-section">
-        <div class="detail-section-head">
-          <div class="detail-index">04 · Model</div>
-          <div class="detail-heading">
-            <h2>Spatial-context-aware channel attention</h2>
-            <p>
-              SR-Weather extends SE-SRCNN by combining global average pooling
-              with global maximum and minimum pooling. DEM and the seasonal
-              climatology map guide the extrema-sensitive attention branches,
-              helping the model preserve localized thermal contrasts.
-            </p>
-          </div>
-        </div>
-
-        <div class="figure-card">
-          <img
-            src="image/weather_sr/SR-Weather architecture.png"
-            alt="Architecture of the SR-Weather model"
-            loading="lazy">
-          <div class="figure-caption">
-            <strong>SR-Weather architecture.</strong>
-            Bicubic-interpolated low-resolution temperature and high-resolution
-            auxiliary variables are processed through multiple attention paths
-            before the final temperature reconstruction.
-          </div>
-        </div>
-      </section>
-
-      <section class="detail-section">
-        <div class="detail-section-head">
-          <div class="detail-index">05 · Results</div>
-          <div class="detail-heading">
-            <h2>Improved reconstruction across heterogeneous landscapes</h2>
-            <p>
-              In the ERA5 test experiment, SR-Weather achieved the strongest
-              overall RMSE and R² among the evaluated methods. Improvements were
-              observed across high-elevation, low-elevation, and urban regions.
-            </p>
-          </div>
-        </div>
-
-        <div class="result-callout">
-          <div class="result-copy">
-            <h3>Terrain- and urban-aware downscaling</h3>
-            <p>
-              Relative to bicubic interpolation, SR-Weather reduced RMSE by
-              46.4% in high-elevation areas, 30.6% in low-elevation areas, and
-              21.6% in urban areas.
-            </p>
-          </div>
-
-          <div class="result-highlight">
-            <span>High-elevation RMSE reduction</span>
-            <strong>46.4%</strong>
-            <p>Relative to bicubic interpolation in the terrain-stratified evaluation.</p>
-          </div>
-        </div>
-
-        <div class="figure-card">
-          <img
-            src="image/weather_sr/ERA5 super-resolution evaluation.png"
-            alt="Spatial verification of SR-Weather and comparison models"
-            loading="lazy">
-          <div class="figure-caption">
-            <strong>ERA5 super-resolution evaluation.</strong>
-            Spatial distributions of RMSE, R², and bias illustrate model
-            performance across the study domain.
-          </div>
-        </div>
-      </section>
-
-      <section class="detail-section">
-        <div class="detail-section-head">
-          <div class="detail-index">06 · Forecast</div>
-          <div class="detail-heading">
-            <h2>From FuXi medium-range forecasts to 1-km temperature fields</h2>
-            <p>
-              The ERA5-trained network is applied to FuXi forecasts without
-              additional model retraining. SR-Weather improves agreement with
-              station observations while reconstructing urban and terrain-induced
-              temperature structures.
-            </p>
-          </div>
-        </div>
-
-        <div class="result-callout">
-          <div class="result-copy">
-            <h3>Beyond spatial interpolation</h3>
-            <p>
-              The paper reports that the downscaled FuXi 7-day forecast achieved
-              lower error than a 1-day low-resolution forecast processed with
-              bicubic interpolation, indicating bias correction in addition to
-              resolution enhancement.
-            </p>
-          </div>
-
-          <div class="result-highlight">
-            <span>Computational efficiency</span>
-            <strong>100–150×</strong>
-            <p>
-              Approximate reduction in computational expense per grid cell
-              compared with the LDAPS-level numerical forecast estimate.
-            </p>
-          </div>
-        </div>
-
-        <div class="figure-card">
-          <img
-            src="image/weather_sr/FuXi forecast downscaling.png"
-            alt="FuXi forecast downscaling examples from SR-Weather"
-            loading="lazy">
-          <div class="figure-caption">
-            <strong>FuXi forecast downscaling.</strong>
-            Representative cases compare coarse forecasts, interpolation,
-            competing SR models, SR-Weather, and MODIS-derived air temperature.
-          </div>
-        </div>
-      </section>
-
-      <section class="detail-section">
-        <div class="detail-section-head">
-          <div class="detail-index">07 · Publication</div>
-          <div class="detail-heading">
-            <h2>Publication</h2>
-          </div>
-        </div>
-
-        <div class="publication-box">
-          <h3>
-            A super-resolution framework for downscaling machine learning
-            weather prediction toward 1-km air temperature
-          </h3>
-
-          <div class="publication-authors">
-            <strong>Hyebin Park</strong>, Seonyoung Park, Daehyun Kang,
-            Jeong-Hwan Kim
-          </div>
-
-          <div class="publication-journal">
-            npj Climate and Atmospheric Science · Volume 9 · Article 56 · 2026
-          </div>
-
-          <div class="publication-links">
-            <a
-              href="https://doi.org/10.1038/s41612-026-01328-5"
-              target="_blank"
-              rel="noopener noreferrer">
-              Paper ↗
-            </a>
-          </div>
-        </div>
-      </section>
+      <div id="protectedContent" class="protected-content"></div>
 
     </div>
   </main>
 
+
   <footer class="site-footer">
     © 2026 Hyebin Park. Seoul National University of Science and Technology.
   </footer>
+
+
+  <script>
+    const encryptedResearch = {
+      salt: "u7/ytU2MsWKJfp0m5OIgwQ==",
+      iv: "m7JHddTBWPVCUiGf",
+      data: "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"
+    };
+
+    function base64ToBytes(base64) {
+      const binary = atob(base64);
+      return Uint8Array.from(binary, ch => ch.charCodeAt(0));
+    }
+
+    async function deriveResearchKey(password, salt) {
+      const encoder = new TextEncoder();
+
+      const baseKey = await crypto.subtle.importKey(
+        "raw",
+        encoder.encode(password),
+        "PBKDF2",
+        false,
+        ["deriveKey"]
+      );
+
+      return crypto.subtle.deriveKey(
+        {
+          name: "PBKDF2",
+          salt,
+          iterations: 200000,
+          hash: "SHA-256"
+        },
+        baseKey,
+        {
+          name: "AES-GCM",
+          length: 256
+        },
+        false,
+        ["decrypt"]
+      );
+    }
+
+    async function decryptResearch(password) {
+      const salt = base64ToBytes(encryptedResearch.salt);
+      const iv = base64ToBytes(encryptedResearch.iv);
+      const data = base64ToBytes(encryptedResearch.data);
+
+      const key = await deriveResearchKey(password, salt);
+
+      const plainBuffer = await crypto.subtle.decrypt(
+        {
+          name: "AES-GCM",
+          iv
+        },
+        key,
+        data
+      );
+
+      return new TextDecoder().decode(plainBuffer);
+    }
+
+    const lockForm = document.getElementById("lockForm");
+    const passwordInput = document.getElementById("passwordInput");
+    const lockStatus = document.getElementById("lockStatus");
+    const protectedContent = document.getElementById("protectedContent");
+    const protectedGate = document.getElementById("protectedGate");
+
+    lockForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const password = passwordInput.value;
+      lockStatus.textContent = "Unlocking...";
+
+      try {
+        const decryptedHTML = await decryptResearch(password);
+
+        protectedContent.innerHTML = decryptedHTML;
+        protectedContent.classList.add("visible");
+        protectedGate.style.display = "none";
+
+        lockStatus.textContent = "";
+      } catch (error) {
+        lockStatus.textContent = "Incorrect password.";
+        passwordInput.select();
+      }
+    });
+  </script>
 
 </body>
 </html>
