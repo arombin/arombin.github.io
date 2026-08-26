@@ -253,6 +253,15 @@ a { color: inherit; }
     linear-gradient(145deg,#f5fcf8,#e7f8ee);
   border-bottom: 1px solid #e4f2e9;
 }
+.weather-framework-image {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: auto;
+  transform: translateY(-50%);
+  display: block;
+}
 .visual-weather {
   background:
     radial-gradient(circle at 20% 25%, rgba(5,230,110,.18), transparent 24%),
@@ -499,9 +508,3 @@ a { color: inherit; }
   .lock-form button { width: 100%; }
 }
 
-.weather-framework-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
