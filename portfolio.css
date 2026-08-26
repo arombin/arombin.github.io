@@ -498,3 +498,10 @@ a { color: inherit; }
   .lock-form { flex-direction: column; }
   .lock-form button { width: 100%; }
 }
+
+.weather-framework-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
