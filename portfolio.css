@@ -352,7 +352,7 @@ a { color: inherit; }
 .card-footer .year { color: var(--soft-muted); font-weight: 600; }
 
 /* All research cards — visually close to the main Projects section */
-.research-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 22px; }
+.research-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }
 .research-card {
   position: relative;
   min-height: 330px;
