@@ -1,53 +1,162 @@
-<!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Portfolio | Hyebin Park</title><meta name="description" content="Research portfolio of Hyebin Park in AI, remote sensing, Earth observation, and environmental science.">
-<link rel="stylesheet" href="portfolio.css"></head><body>
-<nav class="site-nav"><div class="nav-inner">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Hyebin Park</title>
+  <meta name="description" content="Research portfolio of Hyebin Park in AI, remote sensing, Earth observation, and environmental science.">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
       <a class="logo" href="index.html">Hyebin Park<span class="logo-dot">.</span></a>
       <ul class="nav-links">
         <li><a href="index.html#about">About</a></li>
         <li><a class="active" href="portfolio.html">Portfolio</a></li>
         <li><a href="index.html#publications">Publications</a></li>
         <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#education">Experience</a></li>
+        <li><a href="index.html#awards">Awards</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
-    </div></nav>
-<header class="portfolio-hero"><div class="container">
-  <div class="eyebrow">Portfolio</div>
-  <h1>Research <span>Portfolio.</span></h1>
-  <p class="lead">Selected research in artificial intelligence, remote sensing, Earth observation, and environmental science. Published work is fully accessible; selected ongoing work exposes only a public overview until unlocked.</p>
-</div></header>
+    </div>
+  </nav>
 
-<section class="section"><div class="container">
-  <div class="section-head"><div><div class="eyebrow">Selected Work</div><h2>Highlighted Research</h2></div><p>Research projects that best represent my current interests and methodological direction.</p></div>
-  <div class="highlight-grid">
-    <a class="feature-card" href="research/kompsat-sr.html">
-      <div class="card-visual"><div class="visual-lines"></div><div class="visual-kicker">Satellite Image Super-Resolution</div></div>
-      <div class="card-body"><div class="card-meta"><span class="badge">Highlighted</span><span class="badge locked">🔒 In preparation</span></div>
-        <h3 class="card-title">Resolution Enhancement of KOMPSAT-3 RGB Imagery Using Aerial Images</h3>
-        <p class="card-desc">Cross-platform research on recovering finer spatial information in satellite imagery using high-resolution aerial observations.</p>
-        <div class="card-footer"><span>View research →</span><span class="year">2025 — Present</span></div>
+  <header class="portfolio-hero">
+    <div class="portfolio-hero-inner">
+      <div class="hero-copy">
+        <div class="hero-label">Research Portfolio</div>
+        <h1>Selected<br><span>Research.</span></h1>
+        <p class="lead">
+          A collection of my work in <strong>artificial intelligence, remote sensing,
+          and Earth observation</strong> — from satellite image super-resolution to
+          environmental downscaling and foundation-model research.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#highlighted">Highlighted Research</a>
+          <a class="btn btn-secondary" href="#all-research">View All Research</a>
+        </div>
       </div>
-    </a>
-    <a class="feature-card" href="research/weather-sr.html">
-      <div class="card-visual weather"><div class="visual-lines"></div><div class="visual-kicker">Environmental Downscaling</div></div>
-      <div class="card-body"><div class="card-meta"><span class="badge">Highlighted</span><span class="badge published">Published</span></div>
-        <h3 class="card-title">A Super-Resolution Framework for 1-km Air Temperature</h3>
-        <p class="card-desc">A super-resolution framework for downscaling machine-learning weather prediction toward kilometer-scale air temperature.</p>
-        <div class="card-footer"><span>View research →</span><span class="year">2026</span></div>
-      </div>
-    </a>
-  </div>
-</div></section>
 
-<section class="section alt"><div class="container">
-  <div class="section-head"><div><div class="eyebrow">Research Archive</div><h2>All Research</h2></div><p>Additional projects spanning foundation models, vegetation productivity, agricultural monitoring, and satellite-based environmental applications.</p></div>
-  <div class="research-grid">
-    <a class="research-card" href="research/foundation-model.html"><div class="card-visual foundation"><div class="visual-lines"></div><div class="visual-kicker">Foundation Models</div></div><div class="card-body"><div class="card-meta"><span class="badge locked">🔒 Ongoing</span></div><h3 class="card-title">Satellite Imagery Foundation Model Data & Valuation</h3><p class="card-desc">Dataset construction, management, and data valuation criteria for Earth observation foundation models.</p><div class="card-footer"><span>View research →</span><span class="year">2026 — Present</span></div></div></a>
-    <a class="research-card" href="research/gpp-sr.html"><div class="card-visual gpp"><div class="visual-lines"></div><div class="visual-kicker">Carbon Cycle</div></div><div class="card-body"><div class="card-meta"><span class="badge">Research</span></div><h3 class="card-title">MODIS GPP Super-Resolution with Sentinel-2</h3><p class="card-desc">Remote-sensing research on enhancing gross primary productivity information using higher-resolution reference imagery.</p><div class="card-footer"><span>View research →</span><span class="year">2025</span></div></div></a>
-    <a class="research-card" href="research/crop-yield.html"><div class="card-visual crop"><div class="visual-lines"></div><div class="visual-kicker">Agricultural Remote Sensing</div></div><div class="card-body"><div class="card-meta"><span class="badge published">Published</span></div><h3 class="card-title">Satellite-Based Cabbage and Radish Yield Prediction</h3><p class="card-desc">Deep-learning-based crop yield prediction using satellite observations in Gangwon-do.</p><div class="card-footer"><span>View research →</span><span class="year">2023</span></div></div></a>
-    <a class="research-card" href="research/livestock-monitoring.html"><div class="card-visual livestock"><div class="visual-lines"></div><div class="visual-kicker">Environmental Monitoring</div></div><div class="card-body"><div class="card-meta"><span class="badge">Research</span></div><h3 class="card-title">Livestock Facility Detection & Environmental Monitoring</h3><p class="card-desc">Satellite-image analysis and data augmentation for monitoring livestock facilities and related environmental applications.</p><div class="card-footer"><span>View research →</span><span class="year">2023 — 2025</span></div></div></a>
-  </div>
-</div></section>
-<footer class="site-footer">© 2026 Hyebin Park · AI · Remote Sensing · Earth Observation</footer>
-</body></html>
+      <div class="portfolio-hero-art" aria-hidden="true">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="hero-core">
+          <span class="core-index">01</span>
+          <strong>AI × Earth<br>Observation</strong>
+          <span class="core-note">Research portfolio</span>
+        </div>
+        <div class="float-chip chip-one">SUPER-RESOLUTION</div>
+        <div class="float-chip chip-two">REMOTE SENSING</div>
+        <div class="float-chip chip-three">FOUNDATION MODELS</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="portfolio-section" id="highlighted">
+      <div class="container">
+        <div class="section-title">
+          <div class="section-label">Selected Work</div>
+          <h2>Highlighted Research</h2>
+          <p>Projects that best represent my current research direction and methodological interests.</p>
+        </div>
+
+        <div class="highlight-grid">
+          <a class="feature-card" href="research/kompsat-sr.html">
+            <div class="card-visual visual-sr">
+              <span class="visual-number">01</span>
+              <div class="visual-scene satellite-scene">
+                <span class="pixel pixel-a"></span><span class="pixel pixel-b"></span><span class="pixel pixel-c"></span>
+                <span class="scan scan-a"></span><span class="scan scan-b"></span><span class="scan scan-c"></span>
+              </div>
+              <span class="visual-kicker">Satellite Image Super-Resolution</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="badge">Highlighted</span>
+                <span class="badge locked">🔒 In Preparation</span>
+              </div>
+              <h3 class="card-title">Resolution Enhancement of KOMPSAT-3 RGB Imagery Using Aerial Images</h3>
+              <p class="card-desc">Cross-platform research on recovering finer spatial information in satellite imagery using high-resolution aerial observations.</p>
+              <div class="card-footer"><span>View research <b>↗</b></span><span class="year">2025 — Present</span></div>
+            </div>
+          </a>
+
+          <a class="feature-card" href="research/weather-sr.html">
+            <div class="card-visual visual-weather">
+              <span class="visual-number">02</span>
+              <div class="visual-scene climate-scene">
+                <span class="contour contour-a"></span><span class="contour contour-b"></span><span class="contour contour-c"></span>
+                <span class="climate-dot dot-a"></span><span class="climate-dot dot-b"></span><span class="climate-dot dot-c"></span>
+              </div>
+              <span class="visual-kicker">Environmental Downscaling</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="badge">Highlighted</span>
+                <span class="badge published">Published</span>
+              </div>
+              <h3 class="card-title">A Super-Resolution Framework for 1-km Air Temperature</h3>
+              <p class="card-desc">A super-resolution framework for downscaling machine-learning weather prediction toward kilometer-scale air temperature.</p>
+              <div class="card-footer"><span>View research <b>↗</b></span><span class="year">2026</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-section archive-section" id="all-research">
+      <div class="container">
+        <div class="section-title archive-title">
+          <div class="section-label">Research Archive</div>
+          <h2>All Research</h2>
+          <p>Additional work spanning Earth observation foundation models, carbon-cycle analysis, agriculture, and environmental monitoring.</p>
+        </div>
+
+        <div class="research-grid">
+          <a class="research-card" href="research/foundation-model.html">
+            <div class="research-topline"><span class="research-number">03</span><span class="badge locked">🔒 Ongoing</span></div>
+            <div class="mini-visual mini-foundation"><span></span><span></span><span></span><span></span></div>
+            <div class="research-type">Foundation Models</div>
+            <h3>Satellite Imagery Foundation Model Data &amp; Valuation</h3>
+            <p>Dataset construction, management, and data valuation criteria for Earth observation foundation models.</p>
+            <div class="research-bottom"><span>View research →</span><span>2026 — Present</span></div>
+          </a>
+
+          <a class="research-card" href="research/gpp-sr.html">
+            <div class="research-topline"><span class="research-number">04</span><span class="badge">Research</span></div>
+            <div class="mini-visual mini-gpp"><span></span><span></span><span></span></div>
+            <div class="research-type">Carbon Cycle</div>
+            <h3>MODIS GPP Super-Resolution with Sentinel-2</h3>
+            <p>Enhancing gross primary productivity information using higher-resolution reference imagery.</p>
+            <div class="research-bottom"><span>View research →</span><span>2025</span></div>
+          </a>
+
+          <a class="research-card" href="research/crop-yield.html">
+            <div class="research-topline"><span class="research-number">05</span><span class="badge published">Published</span></div>
+            <div class="mini-visual mini-crop"><span></span><span></span><span></span><span></span></div>
+            <div class="research-type">Agricultural Remote Sensing</div>
+            <h3>Satellite-Based Cabbage and Radish Yield Prediction</h3>
+            <p>Deep-learning-based crop-yield prediction using satellite observations in Gangwon-do.</p>
+            <div class="research-bottom"><span>View research →</span><span>2023</span></div>
+          </a>
+
+          <a class="research-card" href="research/livestock-monitoring.html">
+            <div class="research-topline"><span class="research-number">06</span><span class="badge">Research</span></div>
+            <div class="mini-visual mini-monitoring"><span></span><span></span><span></span></div>
+            <div class="research-type">Environmental Monitoring</div>
+            <h3>Livestock Facility Detection &amp; Environmental Monitoring</h3>
+            <p>Satellite-image analysis and data augmentation for monitoring livestock facilities and environmental applications.</p>
+            <div class="research-bottom"><span>View research →</span><span>2023 — 2025</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">© 2026 Hyebin Park. Seoul National University of Science and Technology.</footer>
+</body>
+</html>
