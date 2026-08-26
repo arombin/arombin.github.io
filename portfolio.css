@@ -68,7 +68,7 @@ a { color: inherit; }
 
 /* Portfolio hero */
 .portfolio-hero {
-  min-height: 83vh;
+  min-height: 70vh;
   padding-top: 70px;
   overflow: hidden;
   display: flex;
