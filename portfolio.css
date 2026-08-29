@@ -358,7 +358,34 @@ a { color: inherit; }
 .card-footer .year { color: var(--soft-muted); font-weight: 600; }
 
 /* All research cards — visually close to the main Projects section */
-.research-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }
+.research-archive {
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}
+
+.research-year-group {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 35px;
+  align-items: start;
+}
+
+.research-year {
+  position: sticky;
+  top: 100px;
+
+  color: var(--green-dark);
+  font-size: 27px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+}
+
+.research-year-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
 .research-card {
   position: relative;
   min-height: 210px;
@@ -486,6 +513,19 @@ a { color: inherit; }
   .fact-panel { position: static; }
   .portfolio-section { padding: 75px 22px; }
   .research-card { min-height: 320px; }
+}
+@media (max-width: 850px) {
+  .research-year-group {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .research-year {
+    position: static;
+    font-size: 24px;
+  }
+  .research-year-list {
+    grid-template-columns: 1fr;
+  }
 }
 @media (max-width: 500px) {
   .nav-inner { padding: 0 20px; }
