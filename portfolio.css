@@ -297,7 +297,8 @@ a { color: inherit; }
   border-bottom: 1px solid #e4f2e9;
 }
 
-.weather-framework-image {
+.weather-framework-image,
+.kompsat-framework-image {
   position: absolute;
   left: 0;
   top: 50%;
