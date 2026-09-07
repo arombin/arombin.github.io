@@ -270,8 +270,50 @@
   }
 
     .btn-primary {
+      position: relative;
+
       color: #07351F;
       background: #05E66E;
+    }
+
+    .portfolio-cue {
+      position: absolute;
+      right: calc(100% + 11px);
+      top: 50%;
+
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1px;
+
+      white-space: nowrap;
+      pointer-events: none;
+
+      transform: translateY(-50%);
+      animation: portfolio-point 1.25s ease-in-out infinite;
+    }
+
+    .portfolio-cue .pointer {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .portfolio-cue .click-text {
+      color: #07984F;
+      font-size: 13px;
+      font-weight: 750;
+      font-style: italic;
+      letter-spacing: -0.01em;
+    }
+
+    @keyframes portfolio-point {
+      0%, 100% {
+        transform: translate(-2px, -50%);
+      }
+
+      50% {
+        transform: translate(4px, -50%);
+      }
     }
 
     .btn-primary:hover {
@@ -947,6 +989,10 @@
       background: #ffffff;
     }
 
+    #projects {
+      background: #F7FCF9;
+    }
+
     #education {
       background: #ffffff;
     }
@@ -1034,6 +1080,10 @@
     }
 
     @media (max-width: 500px) {
+
+      .portfolio-cue {
+        display: none;
+      }
 
       .nav-container {
         padding: 0 20px;
@@ -1132,6 +1182,10 @@
           <a
             href="portfolio.html?v=1"
             class="btn btn-primary">
+            <span class="portfolio-cue" aria-hidden="true">
+              <span class="pointer">👉</span>
+              <span class="click-text">click!</span>
+            </span>
             Portfolio
           </a>
 
