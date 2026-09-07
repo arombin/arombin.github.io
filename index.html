@@ -442,10 +442,6 @@
        Research
     ==================================== */
 
-    #research {
-      background: #F7FCF9;
-    }
-
     .research-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -573,13 +569,76 @@
     }
 
 
+
+    /* ===================================
+       Research Grants
+    ==================================== */
+
+    .grant-card {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+
+      padding: 34px 0;
+
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .grant-year {
+      color: #07984F;
+
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .grant-title {
+      max-width: 830px;
+
+      margin-bottom: 8px;
+
+      color: #111827;
+
+      font-size: 20px;
+      font-weight: 650;
+      line-height: 1.5;
+    }
+
+    .grant-program {
+      margin-bottom: 5px;
+
+      color: #4b5563;
+
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .grant-org {
+      margin-bottom: 15px;
+
+      color: #9ca3af;
+
+      font-size: 14px;
+    }
+
+    .grant-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+
+      color: #5f6876;
+
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .grant-meta strong {
+      color: #374151;
+    }
+
+
     /* ===================================
        Projects
     ==================================== */
-
-    #projects {
-      background: #F7FCF9;
-    }
 
     .project-grid {
       display: grid;
@@ -875,35 +934,35 @@
     /* ===================================
        Alternating Section Backgrounds
     ==================================== */
-    
+
     #about {
       background: #ffffff;
     }
-    
+
     #publications {
       background: #F7FCF9;
     }
-    
-    #projects {
+
+    #grants {
       background: #ffffff;
     }
-    
+
     #education {
-      background: #F7FCF9;
+      background: #ffffff;
     }
-    
+
     #awards {
-      background: #ffffff;
-    }
-    
-    #presentations {
       background: #F7FCF9;
     }
-    
-    #contact {
+
+    #presentations {
       background: #ffffff;
     }
-    
+
+    #contact {
+      background: #F7FCF9;
+    }
+
     /* About 오른쪽 정보 박스 */
     .info-box {
       background: #F7FCF9;
@@ -965,6 +1024,7 @@
       }
 
       .publication,
+      .grant-card,
       .award-card,
       .timeline-item {
         grid-template-columns: 1fr;
@@ -1025,6 +1085,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#publications">Publications</a></li>
+        <li><a href="#grants">Grants</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#education">Experience</a></li>
         <li><a href="#awards">Awards</a></li>
@@ -1307,6 +1368,70 @@
 
   </section>
 
+
+
+
+
+  <!-- ===================================
+       Research Grants
+  ==================================== -->
+
+  <section id="grants">
+
+    <div class="section-container">
+
+      <div class="section-title">
+
+        <div class="section-label">
+          Funding
+        </div>
+
+        <h2>
+          Research Grants & Fellowships
+        </h2>
+
+      </div>
+
+
+      <div class="grant-card">
+
+        <div class="grant-year">
+          2026 — 2028
+        </div>
+
+        <div>
+
+          <div class="grant-title">
+            Global Super-Resolution of Weather Forecasts for Extreme
+            Temperature Events under Diverse Climate and Terrain Conditions
+          </div>
+
+          <div class="grant-program">
+            Doctoral Student Research Grant
+          </div>
+
+          <div class="grant-org">
+            National Research Foundation of Korea (NRF) ·
+            Ministry of Education, Republic of Korea
+          </div>
+
+          <div class="grant-meta">
+            <span>
+              <strong>Role:</strong> Principal Investigator
+            </span>
+
+            <span>
+              <strong>Funding:</strong> KRW 50 million
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
   <!-- ===================================
