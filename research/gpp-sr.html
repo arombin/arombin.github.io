@@ -300,11 +300,12 @@
 
     /* Keep academic figures slightly inset instead of filling the whole card. */
     .figure-card img {
-      width: calc(100% - 64px);
-      max-width: 960px;
+      width: auto;
+      max-width: calc(100% - 64px);
+      max-height: 420px;
       height: auto;
       display: block;
-      margin: 32px auto 28px;
+      margin: 24px auto 20px;
       object-fit: contain;
       background: #fff;
     }
@@ -458,8 +459,10 @@
       }
 
       .figure-card img {
-        width: calc(100% - 28px);
-        margin: 18px auto 16px;
+        width: auto;
+        max-width: calc(100% - 28px);
+        max-height: 280px;
+        margin: 16px auto 14px;
       }
     }
   
